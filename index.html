@@ -45,21 +45,13 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 0;
+            padding: 12px;
             background-color: #121212;
             color: #FFF;
             font-family: 'Lora', serif;
         }
 
-        .container {
-            max-width: 1320px;
-            width: 100%;
-            /* padding-right: var(--bs-gutter-x, 0.75rem);
-            padding-left: var(--bs-gutter-x, 0.75rem); */
-            margin-right: auto;
-            margin-left: auto;
-        }
-
+        
         header {
             height: 50vh;
             display: flex;
@@ -67,10 +59,11 @@
             justify-content: center;
             text-align: center;
         }
-
+        
         header>h1 {
             font-size: 8rem;
-            background-image: url(https://static.kent.ac.uk/nexus/ems/818.jpg);
+            background-image: url(https://static.kent.ac.uk/nexus/ems/818.jpg),
+            linear-gradient(90deg, rgba(137, 51, 59, 1) 0%, rgba(121, 76, 9, 1) 40%, rgba(0, 52, 255, 1) 100%);
             background-size: cover;
             background-clip: text;
             -webkit-text-stroke: 1px white;
@@ -78,6 +71,17 @@
             color: transparent;
         }
 
+        li:not(:last-child) { 
+            margin-bottom: 12px;  
+        }
+
+        .container {
+            max-width: 1320px;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
         footer {
             display: flex;
             flex-direction: column;
@@ -120,21 +124,31 @@
     </header>
     <div class="container">
         <section>
-            <h3>Another section to talk about</h3>
-            <p>Another paragraph text just to test some stuff.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At beatae tenetur neque dicta dolore amet,
-                doloribus accusamus soluta! Ea suscipit earum magni, officiis perspiciatis vel mollitia aut eius
-                voluptates incidunt.
-                Excepturi, quasi soluta assumenda ducimus minus numquam fugit eveniet esse nesciunt est, tempora
-                doloremque dolores reprehenderit odio, laboriosam repellat obcaecati deleniti incidunt et officia.
-                Magnam sunt deleniti exercitationem consequuntur minus!
-                Recusandae aspernatur ad nobis ipsum enim fugit, mollitia quos possimus obcaecati, reiciendis at. Unde
-                temporibus quia velit in! Cum dolor soluta quis sed impedit rem dolore minus neque quam itaque?
-                Beatae sint ipsa quibusdam fugiat expedita temporibus eos eum. Ipsam earum sequi hic ipsum esse quam
-                quidem porro expedita dolore minima culpa, delectus, est magni, labore suscipit? Sed, velit dignissimos.
-                Recusandae amet odit corrupti nulla. Amet illo eius modi velit provident dolorem maiores eveniet iusto
-                quibusdam, cum magni nihil sunt aperiam enim voluptatem cupiditate, voluptatum asperiores mollitia quia
-                molestiae quo.</p>
+            <h3>But what is this about?</h3>
+            <p>On any given day, users of computers everywhere go through a motley of apps and systems that manage data,
+                transfer it between other computers, and then are able to process and display it in a format that best
+                suits the needs of the user. But under the hood, these seemingly standalone programs often have a clear
+                and traceable history of development that takes inspiration from or directly implements the code of
+                other (past) projects.
+            </p>
+            <p>
+                It does make one ponder if there is some underlying relation between the people
+                working on these products and to what degree and in what form do these parallels are drawn.
+            </p>
+            <p>I aim to
+                answer the question: to what extent do the factors of educational level, professional standing, and
+                shared development heritage play a role in how similar the code of software products are.
+            </p>
+            <p>Throughout this, I will:</p>
+            <ul>
+                <li>go over the current status quo of academic studies assessing this similarity and what measure are
+                    being employed to quantify and develop on their findings</li>
+                <li>show how the development of free and
+                    open source software projects like the operating system unix with its ancestors BSD and Linux
+                    present
+                    themselves as a superb model for how different software products can be simultaneously created and
+                    actively maintained from a “software core”.</li>
+            </ul>
         </section>
         <section>
             <h3>But it is yet more of sections</h3>
