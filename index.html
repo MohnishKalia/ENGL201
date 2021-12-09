@@ -46,12 +46,15 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 12px;
+            padding: 0;
             background-color: #121212;
             color: #FFF;
             font-family: 'Lora', serif;
         }
 
+        .content {
+            padding: 0 12px;
+        }
 
         header {
             height: 50vh;
@@ -87,11 +90,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
-        
+
         .side-by-side>figure>img {
             width: 100%;
         }
-        
+
         .solo {
             display: grid;
             justify-content: center;
@@ -135,125 +138,151 @@
 </head>
 
 <body>
-    <header>
-        <h1>Variant Analysis</h1>
-        <q>recovering and visualizing information about commonalities and differences that exist in the source code of
-            multiple similar software systems</q>
-        <cite>(Duszynski and Becker 2012, 1)</cite>
-    </header>
-    <div class="container">
-        <section>
-            <h3>But what is this about?</h3>
-            <p>On any given day, users of computers everywhere go through a motley of apps and systems that manage data,
-                transfer it between other computers, and then are able to process and display it in a format that best
-                suits the needs of the user. But under the hood, these seemingly standalone programs often have a clear
-                and traceable history of development that takes inspiration from or directly implements the code of
-                other (past) projects.
-            </p>
-            <p>
-                It does make one ponder if there is some underlying relation between the people
-                working on these products and to what degree and in what form do these parallels are drawn.
-            </p>
-            <p>I aim to
-                answer the question: to what extent do the factors of educational level, professional standing, and
-                shared development heritage play a role in how similar the code of software products are.
-            </p>
-            <p>Throughout this, I will:</p>
-            <ul>
-                <li>go over the current status quo of academic studies assessing this similarity and what measure are
-                    being employed to quantify and develop on their findings</li>
-                <li>show how the development of free and
-                    open source software projects like the operating system unix with its ancestors BSD and Linux
-                    present
-                    themselves as a superb model for how different software products can be simultaneously created and
-                    actively maintained from a “software core”.</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Parallel Development? What's that?</h3>
-            <p>In order to ascertain how software products develop in a way that draws from previous software, it is
-                necessary to delve into what parallel development is. In short, it is when 2 or more groups of
-                developers
-                (companies or open source groups) take an existing software product and extend onto it with features
-                specific to what the user base of that group needs <cite>(Zhang and Becker, 1)</cite>.</p>
-            <p>For example, the codebase of an
-                imaging app could be used by one company to develop a method for enabling the mobile depositing of
-                checks,
-                while another company could be displaying 3D augmented reality models of products that could fit in your
-                home. In both these cases, the apps independently, but simultaneously developed the ability (via code)
-                for
-                the phone to track markers on objects the camera sees such as the signature line on checks, or invisible
-                points on the floor for setting the origin of the AR model.</p>
-            <div class="side-by-side">
-                <figure>
-                    <img src="https://techcrunch.com/wp-content/uploads/2020/08/image006.png?w=990&crop=1"
-                        alt="Amazon AR Tech">
-                    <figcaption><small>Amazon's AR capable view of products</small></figcaption>
-                </figure>
-                <figure>
-                    <img src="https://www.eccu.org/assets/mobile_check_deposit_2017.jpg" alt="Mobile deposit AR tech">
-                    <figcaption><small>An example of mobile check deposits</small></figcaption>
-                </figure>
-            </div>
-            <p>While the implementation of this tracking
-                ability may be similar, it is worthwhile to note these similarities are of great concern in the case of
-                patents or trademarks on how that process is accomplished, or if there is a bug in the implementation of
-                one
-                of the products and the other product is looking to extend the bug fix for that issue into their own
-                codebase. When these similarities arise, it is often because a lot of the functionality from the base
-                app
-                (the “software core”) like the imaging app exposes its functionality in such a way that it is nigh
-                unavoidable to structure your code in a specific way to handle the control flow and results from their
-                functions.</p>
-            <p>All of these considerations play a part into why parallel development is an extremely important
-                field to study and analyse.</p>
-        </section>
-
-        <section>
-            <!-- TODO: should be a paragraph here -->
-            <small class="text-muted">...some more content should be put in between here...</small>
-        </section>
-
-        <section>
-            <h3>Open source and Unix</h3>
-            <p>It is worthwhile to note that the focus of this study was on the unix operating system and its ancestors,
-                specifically the BSD (Berkeley Software Distribution) and Linux operating systems as they have an easily
-                traceable ancestry with minor changes between the source code, all while being FOSS (free and open
-                source
-                software) allowing for full analysis into its inner workings along with a complete edit history going
-                back
-                to the 80s <cite>(“Linus Torvalds”, 2020)</cite>.</p>
-            <p>Because of this, it is a prime model of discussion when it comes to
-                software projects and how they evolve. As such, it is worth taking a look at the unix family as a sort
+    <article class="content">
+        <header>
+            <h1>Variant Analysis</h1>
+            <q>recovering and visualizing information about commonalities and differences that exist in the source code
                 of
-                case study to center the goals of this paper around. The Linux project in particular has a large number
-                of
-                people contributing to its development on a monthly basis, encompassing a wide variety of developers at
-                different levels in their career.</p>
-            <p>The study from Davis and Jabeen in 2011 titled “Learning in the GNU/Linux
-                community” looked at 4603 people who contributed to the Linux project and conducted a 21 question survey
-                intended to look at the general demographic of the base. They found that when splitting up the age
-                groups
-                into 4 year slices like 18-22 and 33-37, variability in age was not very large as nearly all groups had
-                equal percentages <cite>(2, Fig. 2)</cite>.</p>
-            <div class="solo">
-                <figure>
-                    <img src="./images/LinuxCommunity.png" alt="Survey results of the Linux community">
-                    <figcaption><small>The results of the Linux community survey</small></figcaption>
-                </figure>
-            </div>
-            <p>This is important because it rules out the notion that older universities and
-                teachings would dominate the ways of thinking and ultimately the design of the source code, at least
-                when it
-                comes to new developments in the project.</p>
-            <p>Additionally, they looked into the End-User roles (the equivalent
-                of profession standing), and found that 40% of people were in advanced (senior level) roles, with people
-                in
-                beginning (junior level) roles not too far behind at 34% and developing (intern level or interested in
-                the
-                industry) roles much further down at 24% <cite>(2, Fig. 4)</cite>.</p>
-        </section>
-    </div>
+                multiple similar software systems</q>
+            <cite>(Duszynski and Becker 2012, 1)</cite>
+        </header>
+        <div class="container">
+            <section>
+                <h3>But what is this about?</h3>
+                <p>On any given day, users of computers everywhere go through a motley of apps and systems that manage
+                    data,
+                    transfer it between other computers, and then are able to process and display it in a format that
+                    best
+                    suits the needs of the user. But under the hood, these seemingly standalone programs often have a
+                    clear
+                    and traceable history of development that takes inspiration from or directly implements the code of
+                    other (past) projects.
+                </p>
+                <p>
+                    It does make one ponder if there is some underlying relation between the people
+                    working on these products and to what degree and in what form do these parallels are drawn.
+                </p>
+                <p>I aim to
+                    answer the question: to what extent do the factors of educational level, professional standing, and
+                    shared development heritage play a role in how similar the code of software products are.
+                </p>
+                <p>Throughout this, I will:</p>
+                <ul>
+                    <li>go over the current status quo of academic studies assessing this similarity and what measure
+                        are
+                        being employed to quantify and develop on their findings</li>
+                    <li>show how the development of free and
+                        open source software projects like the operating system unix with its ancestors BSD and Linux
+                        present
+                        themselves as a superb model for how different software products can be simultaneously created
+                        and
+                        actively maintained from a “software core”.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Parallel Development? What's that?</h3>
+                <p>In order to ascertain how software products develop in a way that draws from previous software, it is
+                    necessary to delve into what parallel development is. In short, it is when 2 or more groups of
+                    developers
+                    (companies or open source groups) take an existing software product and extend onto it with features
+                    specific to what the user base of that group needs <cite>(Zhang and Becker, 1)</cite>.</p>
+                <p>For example, the codebase of an
+                    imaging app could be used by one company to develop a method for enabling the mobile depositing of
+                    checks,
+                    while another company could be displaying 3D augmented reality models of products that could fit in
+                    your
+                    home. In both these cases, the apps independently, but simultaneously developed the ability (via
+                    code)
+                    for
+                    the phone to track markers on objects the camera sees such as the signature line on checks, or
+                    invisible
+                    points on the floor for setting the origin of the AR model.</p>
+                <div class="side-by-side">
+                    <figure>
+                        <img src="https://techcrunch.com/wp-content/uploads/2020/08/image006.png?w=990&crop=1"
+                            alt="Amazon AR Tech">
+                        <figcaption><small>Amazon's AR capable view of products</small></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="https://www.eccu.org/assets/mobile_check_deposit_2017.jpg"
+                            alt="Mobile deposit AR tech">
+                        <figcaption><small>An example of mobile check deposits</small></figcaption>
+                    </figure>
+                </div>
+                <p>While the implementation of this tracking
+                    ability may be similar, it is worthwhile to note these similarities are of great concern in the case
+                    of
+                    patents or trademarks on how that process is accomplished, or if there is a bug in the
+                    implementation of
+                    one
+                    of the products and the other product is looking to extend the bug fix for that issue into their own
+                    codebase. When these similarities arise, it is often because a lot of the functionality from the
+                    base
+                    app
+                    (the “software core”) like the imaging app exposes its functionality in such a way that it is nigh
+                    unavoidable to structure your code in a specific way to handle the control flow and results from
+                    their
+                    functions.</p>
+                <p>All of these considerations play a part into why parallel development is an extremely important
+                    field to study and analyse.</p>
+            </section>
+
+            <section>
+                <!-- TODO: should be a paragraph here -->
+                <small class="text-muted">...some more content should be put in between here...</small>
+            </section>
+
+            <section>
+                <h3>Open source and Unix</h3>
+                <p>It is worthwhile to note that the focus of this study was on the unix operating system and its
+                    ancestors,
+                    specifically the BSD (Berkeley Software Distribution) and Linux operating systems as they have an
+                    easily
+                    traceable ancestry with minor changes between the source code, all while being FOSS (free and open
+                    source
+                    software) allowing for full analysis into its inner workings along with a complete edit history
+                    going
+                    back
+                    to the 80s <cite>(“Linus Torvalds”, 2020)</cite>.</p>
+                <p>Because of this, it is a prime model of discussion when it comes to
+                    software projects and how they evolve. As such, it is worth taking a look at the unix family as a
+                    sort
+                    of
+                    case study to center the goals of this paper around. The Linux project in particular has a large
+                    number
+                    of
+                    people contributing to its development on a monthly basis, encompassing a wide variety of developers
+                    at
+                    different levels in their career.</p>
+                <p>The study from Davis and Jabeen in 2011 titled “Learning in the GNU/Linux
+                    community” looked at 4603 people who contributed to the Linux project and conducted a 21 question
+                    survey
+                    intended to look at the general demographic of the base. They found that when splitting up the age
+                    groups
+                    into 4 year slices like 18-22 and 33-37, variability in age was not very large as nearly all groups
+                    had
+                    equal percentages <cite>(2, Fig. 2)</cite>.</p>
+                <div class="solo">
+                    <figure>
+                        <img src="./images/LinuxCommunity.png" alt="Survey results of the Linux community">
+                        <figcaption><small>The results of the Linux community survey</small></figcaption>
+                    </figure>
+                </div>
+                <p>This is important because it rules out the notion that older universities and
+                    teachings would dominate the ways of thinking and ultimately the design of the source code, at least
+                    when it
+                    comes to new developments in the project.</p>
+                <p>Additionally, they looked into the End-User roles (the equivalent
+                    of profession standing), and found that 40% of people were in advanced (senior level) roles, with
+                    people
+                    in
+                    beginning (junior level) roles not too far behind at 34% and developing (intern level or interested
+                    in
+                    the
+                    industry) roles much further down at 24% <cite>(2, Fig. 4)</cite>.</p>
+            </section>
+        </div>
+    </article>
     <footer>
         <h3>Authored By Mohnish Kalia</h3>
         <p>For English 201: Intermediate Composition</p>
