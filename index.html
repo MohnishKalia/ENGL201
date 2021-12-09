@@ -1,17 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
     <title>ENGL 201: Variant Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@400;600&display=swap');
+
+        :root {
+            --font-size: 1.125rem;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: var(--font-size);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 3rem;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        img {
+            display: block;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #FFF;
+            font-family: 'Lora', serif;
+        }
+
+        .container {
+            max-width: 1320px;
+            width: 100%;
+            /* padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem); */
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        header {
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        header>h1 {
+            font-size: 8rem;
+            background-image: url(https://static.kent.ac.uk/nexus/ems/818.jpg);
+            background-size: cover;
+            background-clip: text;
+            -webkit-text-stroke: 1px white;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20vh;
+            background-color: #222;
+            max-width: 100vw;
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            padding-bottom: 10vh;
+        }
+
+        .citations {
+            width: 60vw;
+            text-align: left;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-bottom: 0.325rem;
+        }
+
+        dd {
+            margin-bottom: var(--font-size);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello from Variant Analysis</h1>
-    <p>This is an example of paragraph text that will comprise a lot of the text.</p>
-    <img src="https://media.istockphoto.com/photos/concept-image-of-a-magnifying-glass-on-blue-background-with-a-word-picture-id1316134499?b=1&k=20&m=1316134499&s=170667a&w=0&h=DsKKZ2Sc6k7bZQpxZTcHyV7AJqyy-haTXYZlrA2Jy-c=" alt="Example Image">
-    <p>Another paragraph text just to test some stuff.</p>
-    <p>Followed by another.</p>
+    <header>
+        <h1>Variant Analysis</h1>
+        <q>recovering and visualizing information about commonalities and differences that exist in the source code of multiple similar software systems</q>
+        <cite>(Duszynski and Becker 2012, 1)</cite>
+    </header>
+    <div class="container">
+        <section>
+            <h3>Another section to talk about</h3>
+            <p>Another paragraph text just to test some stuff.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At beatae tenetur neque dicta dolore amet,
+                doloribus accusamus soluta! Ea suscipit earum magni, officiis perspiciatis vel mollitia aut eius
+                voluptates incidunt.
+                Excepturi, quasi soluta assumenda ducimus minus numquam fugit eveniet esse nesciunt est, tempora
+                doloremque dolores reprehenderit odio, laboriosam repellat obcaecati deleniti incidunt et officia.
+                Magnam sunt deleniti exercitationem consequuntur minus!
+                Recusandae aspernatur ad nobis ipsum enim fugit, mollitia quos possimus obcaecati, reiciendis at. Unde
+                temporibus quia velit in! Cum dolor soluta quis sed impedit rem dolore minus neque quam itaque?
+                Beatae sint ipsa quibusdam fugiat expedita temporibus eos eum. Ipsam earum sequi hic ipsum esse quam
+                quidem porro expedita dolore minima culpa, delectus, est magni, labore suscipit? Sed, velit dignissimos.
+                Recusandae amet odit corrupti nulla. Amet illo eius modi velit provident dolorem maiores eveniet iusto
+                quibusdam, cum magni nihil sunt aperiam enim voluptatem cupiditate, voluptatum asperiores mollitia quia
+                molestiae quo.</p>
+        </section>
+        <section>
+            <h3>But it is yet more of sections</h3>
+            <p>Followed by another.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tempore maiores corporis cumque itaque in
+                asperiores possimus laudantium vitae vel commodi praesentium, perferendis sit veritatis adipisci eum,
+                unde quis maxime.</p>
+        </section>
+    </div>
+    <footer>
+        <h3>Authored By Mohnish Kalia</h3>
+        <p>For English 201: Intermediate Composition</p>
+        <h3>Works Cited</h3>
+        <dl class="citations">
+            <dt>Sławomir Duszyński and Martin Becker. 2012.</dt>
+            <dd>Recovering variability information from the source code of
+                similar software products. In Proceedings of the Third International Workshop on Product LinE Approaches
+                in Software Engineering (PLEASE '12). IEEE Press, 37–40.
+                https://dl-acm-org.ezproxy.library.wisc.edu/doi/epdf/10.5555/2666064.2666074</dd>
+
+            <dt>Bo Zhang and Martin Becker. 2012.</dt>
+            <dd>Code-based variability model extraction for software product line
+                improvement. In Proceedings of the 16th International Software Product Line Conference - Volume 2 (SPLC
+                '12). Association for Computing Machinery, New York, NY, USA, 91–98.
+                DOI:https://doi-org.ezproxy.library.wisc.edu/10.1145/2364412.2364428</dd>
+
+            <dt>Vasil Tenev, Sławomir Duszyński, and Martin Becker. 2017.</dt>
+            <dd>Variant Analysis: Set-Based Similarity
+                Visualization for Cloned Software Systems. In Proceedings of the 21st International Systems and Software
+                Product Line Conference - Volume B (SPLC '17). Association for Computing Machinery, New York, NY, USA,
+                22–27. DOI:https://doi-org.ezproxy.library.wisc.edu/10.1145/3109729.3109753</dd>
+
+            <dt>Clemente Izurieta and James Bieman. 2006.</dt>
+            <dd>The evolution of FreeBSD and linux. In Proceedings of the 2006
+                ACM/IEEE international symposium on Empirical software engineering (ISESE '06). Association for
+                Computing Machinery, New York, NY, USA, 204–211.
+                DOI:https://doi-org.ezproxy.library.wisc.edu/10.1145/1159733.1159765</dd>
+
+            <dt>Donald Davis and Iffat Jabeen. 2011.</dt>
+            <dd>Learning in the GNU/Linux community. In Proceedings of the 2011
+                conference on Information technology education (SIGITE '11). Association for Computing Machinery, New
+                York, NY, USA, 21–26. DOI:https://doi-org.ezproxy.library.wisc.edu/10.1145/2047594.2047600</dd>
+
+            <dt>Britannica, The Editors of Encyclopaedia.</dt>
+            <dd>"Linus Torvalds". Encyclopedia Britannica, 24 Dec. 2020,
+                https://www.britannica.com/biography/Linus-Torvalds. Accessed 11 November 2021.</dd>
+
+            <dt>Christian Dietrich, Reinhard Tartler, Wolfgang Schröder-Preikshat, and Daniel Lohmann. 2012.</dt>
+            <dd>Understanding linux feature distribution. In Proceedings of the 2012 workshop on Modularity in Systems
+                Software (MISS '12). Association for Computing Machinery, New York, NY, USA, 15–20.
+                DOI:https://doi-org.ezproxy.library.wisc.edu/10.1145/2162024.2162030</dd>
+
+            <dt>LWN.net</dt>
+            <dd>"The LWN.net Linux Distribution List". LWN.net. Accessed 23 November 2021.
+                https://lwn.net/Distributions/</dd>
+        </dl>
+    </footer>
 </body>
+
 </html>
