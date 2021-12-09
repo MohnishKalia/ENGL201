@@ -37,7 +37,8 @@
         }
 
         img {
-            display: block;
+            outline: 2px solid rgb(58, 58, 58);
+            max-height: 40vh;
         }
 
         body {
@@ -51,7 +52,7 @@
             font-family: 'Lora', serif;
         }
 
-        
+
         header {
             height: 50vh;
             display: flex;
@@ -59,20 +60,16 @@
             justify-content: center;
             text-align: center;
         }
-        
+
         header>h1 {
             font-size: 8rem;
             background-image: url(https://static.kent.ac.uk/nexus/ems/818.jpg),
-            linear-gradient(90deg, rgba(137, 51, 59, 1) 0%, rgba(121, 76, 9, 1) 40%, rgba(0, 52, 255, 1) 100%);
+                linear-gradient(90deg, rgba(137, 51, 59, 1) 0%, rgba(121, 76, 9, 1) 40%, rgba(0, 52, 255, 1) 100%);
             background-size: cover;
             background-clip: text;
             -webkit-text-stroke: 1px white;
             -webkit-background-clip: text;
             color: transparent;
-        }
-
-        li:not(:last-child) { 
-            margin-bottom: 12px;  
         }
 
         .container {
@@ -81,7 +78,25 @@
             margin-right: auto;
             margin-left: auto;
         }
+
+        li:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
         
+        .side-by-side>figure>img {
+            width: 100%;
+        }
+        
+        .solo {
+            display: grid;
+            justify-content: center;
+        }
+
         footer {
             display: flex;
             flex-direction: column;
@@ -151,11 +166,83 @@
             </ul>
         </section>
         <section>
-            <h3>But it is yet more of sections</h3>
-            <p>Followed by another.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tempore maiores corporis cumque itaque in
-                asperiores possimus laudantium vitae vel commodi praesentium, perferendis sit veritatis adipisci eum,
-                unde quis maxime.</p>
+            <h3>Parallel Development? What's that?</h3>
+            <p>In order to ascertain how software products develop in a way that draws from previous software, it is
+                necessary to delve into what parallel development is. In short, it is when 2 or more groups of
+                developers
+                (companies or open source groups) take an existing software product and extend onto it with features
+                specific to what the user base of that group needs <cite>(Zhang and Becker, 1)</cite>.</p>
+            <p>For example, the codebase of an
+                imaging app could be used by one company to develop a method for enabling the mobile depositing of
+                checks,
+                while another company could be displaying 3D augmented reality models of products that could fit in your
+                home. In both these cases, the apps independently, but simultaneously developed the ability (via code)
+                for
+                the phone to track markers on objects the camera sees such as the signature line on checks, or invisible
+                points on the floor for setting the origin of the AR model.</p>
+            <div class="side-by-side">
+                <figure>
+                    <img src="https://techcrunch.com/wp-content/uploads/2020/08/image006.png?w=990&crop=1"
+                        alt="Amazon AR Tech">
+                    <figcaption><small>Amazon's AR capable view of products</small></figcaption>
+                </figure>
+                <figure>
+                    <img src="https://www.eccu.org/assets/mobile_check_deposit_2017.jpg" alt="Mobile deposit AR tech">
+                    <figcaption><small>An example of mobile check deposits</small></figcaption>
+                </figure>
+            </div>
+            <p>While the implementation of this tracking
+                ability may be similar, it is worthwhile to note these similarities are of great concern in the case of
+                patents or trademarks on how that process is accomplished, or if there is a bug in the implementation of
+                one
+                of the products and the other product is looking to extend the bug fix for that issue into their own
+                codebase. When these similarities arise, it is often because a lot of the functionality from the base
+                app
+                (the “software core”) like the imaging app exposes its functionality in such a way that it is nigh
+                unavoidable to structure your code in a specific way to handle the control flow and results from their
+                functions.</p>
+            <p>All of these considerations play a part into why parallel development is an extremely important
+                field to study and analyse.</p>
+        </section>
+        <!-- should be a paragraph here -->
+        <section>
+            <h3>Open source and Unix</h3>
+            <p>It is worthwhile to note that the focus of this study was on the unix operating system and its ancestors,
+                specifically the BSD (Berkeley Software Distribution) and Linux operating systems as they have an easily
+                traceable ancestry with minor changes between the source code, all while being FOSS (free and open
+                source
+                software) allowing for full analysis into its inner workings along with a complete edit history going
+                back
+                to the 80s <cite>(“Linus Torvalds”, 2020)</cite>.</p>
+            <p>Because of this, it is a prime model of discussion when it comes to
+                software projects and how they evolve. As such, it is worth taking a look at the unix family as a sort
+                of
+                case study to center the goals of this paper around. The Linux project in particular has a large number
+                of
+                people contributing to its development on a monthly basis, encompassing a wide variety of developers at
+                different levels in their career.</p>
+            <p>The study from Davis and Jabeen in 2011 titled “Learning in the GNU/Linux
+                community” looked at 4603 people who contributed to the Linux project and conducted a 21 question survey
+                intended to look at the general demographic of the base. They found that when splitting up the age
+                groups
+                into 4 year slices like 18-22 and 33-37, variability in age was not very large as nearly all groups had
+                equal percentages <cite>(2, Fig. 2)</cite>.</p>
+            <div class="solo">
+                <figure>
+                    <img src="./images/LinuxCommunity.png" alt="Survey results of the Linux community">
+                    <figcaption><small>The results of the Linux community survey</small></figcaption>
+                </figure>
+            </div>
+            <p>This is important because it rules out the notion that older universities and
+                teachings would dominate the ways of thinking and ultimately the design of the source code, at least
+                when it
+                comes to new developments in the project.</p>
+            <p>Additionally, they looked into the End-User roles (the equivalent
+                of profession standing), and found that 40% of people were in advanced (senior level) roles, with people
+                in
+                beginning (junior level) roles not too far behind at 34% and developing (intern level or interested in
+                the
+                industry) roles much further down at 24% <cite>(2, Fig. 4)</cite>.</p>
         </section>
     </div>
     <footer>
