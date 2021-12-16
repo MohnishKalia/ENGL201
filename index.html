@@ -237,8 +237,60 @@
             </section>
 
             <section>
-                <!-- TODO: should be a paragraph here -->
-                <small class="text-muted">...some more content should be put in between here...</small>
+                <h3>Parallel Development ⮕ Variant Analysis</h3>
+                <p>
+                    Within the realm of software development, the similarities between the codebases of different
+                    products has been thoroughly analysed. It might seem to be exeedingly difficult to visualize how the
+                    code
+                    of software projects are structured and to what extent similar
+                    constructions arise.
+                </p>
+                <p>
+                    However, in academia, this topic has been studied for a decade at this point
+                    under the name “variant analysis” <cite><a href="#citation-1">(Duszynski and Becker 2012,
+                            1)</a></cite>.
+                    Within this landmark study, they look at potential methods in order to:
+                </p>
+                <ul>
+                    <li>assess the degree to which those commonalities in source code arise such as existing AI models
+                        that check for plagiarism in academic assignments</li>
+                    <li>detail a novel approach that involves
+                        diagramming out the occurrences of certain code sections that perform a trivial operation across
+                        different files</li>
+                </ul>
+                <div class="solo">
+                    <figure>
+                        <img src="./images/VAProcess.png" alt="Variant Analysis process">
+                    </figure>
+                </div>
+                <p>
+                    In addition to looking into specific code sections, the approach detailed in the
+                    paper also addresses another end result of the analysis that obtains a structural similarity,
+                    preying on the fact that products in parallel development “were cloned from one another at some
+                    point in time” and as such “they still retain some structural similarity despite later
+                    modifications” <cite><a href="#citation-1">(Duszynski and Becker 2012, 3)</a></cite>.
+                </p>
+                <p>
+                    This "variant analysis" has exeedingly large utility: they document if other variants contain
+                    similar code to what you are working on or if the
+                    variants can be combined while still keeping the functionality intact.
+                </p>
+                <p>This is useful for when one is
+                    trying to fix a bug or port over a feature from another program.
+                </p>
+                <div class="side-by-side">
+                    <figure>
+                        <img src="./images/VAVenn.png" alt="Variant Analysis venn diagram">
+                    </figure>
+                    <figure>
+                        <img src="./images/VABar.png" alt="Variant Analysis bar chart">
+                    </figure>
+                </div>
+                <p>Furthermore, this
+                    analysis is metricized to the point where the results can be tabulated and plotted on a bar chart,
+                    as well as
+                    diagrammed via venn diagrams to show just how much code is similar between two variants.
+                </p>
             </section>
 
             <section>
