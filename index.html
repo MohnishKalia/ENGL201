@@ -400,6 +400,45 @@
                     great quantities, practically, there is a large amount of overlap between the code structure that
                     manifests itself in products that are in common utility.</p>
             </section>
+            <section>
+                <h3>Where does this lead us?</h3>
+                <p>It
+                    does appear that previous research has already assessed just how much of the cross-distribution bug
+                    fixes as detailed in the introduction can be done.</p>
+                <p>In accordance with <cite><a href="#citation-7">Dietrich et al</a></cite>, an analysis into the
+                    granularity of unix (how certain changes affect the end functionality of unix functions in general)
+                    found that as long as the changed code has more to do with the configuration of a program and the
+                    way it
+                    is built rather than changing internals of the programming languages, most of the changes should be
+                    transferable between Linux versions.</p>
+                <p>This works because most developers would not be tinkering with changes to language implementations,
+                    and would
+                    instead be tasked with collectivising the functionality of the operating systems into something that
+                    works for a specific product of their company.</p>
+                <div class="side-by-side">
+                    <figure>
+                        <img src="https://ops.tips/gists/-/images/function-search.png" alt="Linux kernel source code">
+                        <figcaption><small>Source code of the Linux kernel</small></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="https://nixwindows.files.wordpress.com/2015/02/linux-distro-stickers.png"
+                            alt="Linux distro logos">
+                        <figcaption><small>Various distros of Linux</small></figcaption>
+                    </figure>
+                </div>
+                <p>Additionally, there are more than a thousand distributions
+                    of Linux that are able to fit the needs of specific products, like those of mobile and embedded
+                    systems
+                    all the way to large networking and cloud computing operations; the utility of having these
+                    individual
+                    solutions be applied to many parallel products is unparalleled <cite><a
+                            href="#citation-8">(LWN.net)</a></cite>.</p>
+                <p>In the theoretical sense, it is shown that improvements and fixes local to one product can be applied
+                    to the litany of Linux distros out in the wild. Hopefully, this resulted in a better understanding
+                    of how interconnected the apps of today are and how progressive change results in the ability to
+                    create
+                    these grand hierarchies of software and its history.</p>
+            </section>
         </div>
     </article>
     <footer>
